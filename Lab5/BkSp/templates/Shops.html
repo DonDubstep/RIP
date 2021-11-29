@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Магазины</title>
+  </head>
+  <body>
+    {%if shoplist %}
+      <ul>
+      {% for shop in shoplist%}
+          <li><a href="/shops/{{shop.id}}">{{shop.name}}</a></li>
+      {%endfor%}
+      </ul>
+    {%else%}
+      <p>Список пуст</p>
+    {%endif%}
+  </body>
+</html>
