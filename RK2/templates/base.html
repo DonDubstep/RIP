@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>ПК и диски</title>
+  </head>
+  <body>
+    {%for item in computers%}
+    <ul>
+      <li>ID ПК: {{item.id}} <br>
+      Фирма компьютера: {{item.brand}}<br>
+      Операционная система:{{item.os}}<br>
+      <ol>
+        {%for disk in disks%}
+        {%if disk.computer == item%}
+        <li>ID диска:{{disk.id}}<br>
+            Объём диска:{{disk.size}}<br>
+            Фирма диска:{{disk.brand}}<br>
+        </li>
+        {%endif%}
+        {%endfor%}
+      </ol>
+      </li>
+    </ul>
+    {%endfor%}
+  </body>
+</html>
